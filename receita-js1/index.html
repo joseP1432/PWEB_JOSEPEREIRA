@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>   
+    
+   <head>
+      <meta charset="UTF-8">
+      <link href='estilo.css' rel='stylesheet'>
+   </head>
+
+   <body>
+        <div id="espaco">
+            <button id="out"> FADE OUT</button>
+            <button id="in"> FADE IN</button>
+        </div>
+        <div id="fad">
+            <div id="meuamor"> 
+                Carregando cervejas...
+            </div>
+            <div id="nova div"> 
+                <button id="play"> PLAY </button>
+                <button id="next"> NEXT </button>
+            </div>
+            <div id="novata"> </div>
+        </div>
+    </body> 
+
+   <script>
+        function carregarDiv(){
+            let div = document.getElementById("meuamor")
+            div.innerHTML = '<h1> Guinness </h1>'
+        }
+        function novaDiv(){
+            let div = document.getElementById("novata")
+            div.innerHTML = '<h1> Guinness </h1>'
+            trocar()
+        }
+        function trocar(){
+            let div = document.getElementById("nova div")
+            div.innerHTML = '<button id="play"> PLAY </button> <button id="next2"> NEXT </button>'
+            let button = document.getElementById("next2")
+            button.addEventListener("click", outraDiv)
+            let botao = document.getElementById("play")
+            botao.addEventListener("click", carregarDiv)
+        }
+        function outraDiv(){
+            let div = document.getElementById("novata")
+            div.innerHTML = '<h1> </h1>'
+            retrocar()
+        }
+        function retrocar(){
+            let div = document.getElementById("nova div")
+            div.innerHTML = '<button id="play"> PLAY </button> <button id="next"> NEXT </button>'
+            let bot = document.getElementById("next")
+            bot.addEventListener("click", novaDiv)
+            let botao = document.getElementById("play")
+            botao.addEventListener("click", carregarDiv)
+        }
+        function fade_out(){
+            var project = document.querySelector('#fad');
+            project.style.opacity = 0;
+        }
+        function fade_in(){
+            var project = document.querySelector('#fad');
+            project.style.opacity = 1;
+            let div = document.getElementById("fad")
+            div.innerHTML = '<div> HELLO WORLD </div>'
+        }
+        
+        let botao = document.getElementById("play")
+        botao.addEventListener("click", carregarDiv)
+
+        let bot = document.getElementById("next")
+        bot.addEventListener("click", novaDiv)
+
+        let fout = document.getElementById("out")
+        fout.addEventListener("click", fade_out)
+
+        let fin = document.getElementById("in")
+        fin.addEventListener("click", fade_in)
+    </script>
+</html>
