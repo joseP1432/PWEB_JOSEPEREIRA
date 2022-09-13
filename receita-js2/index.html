@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>   
+   <head>
+      <meta charset="UTF-8">
+      <link href='estilo.css' rel='stylesheet'>   
+   </head>
+
+   <body>
+        <div id="meu amor">
+            <button id="botaoCarregar">Carregando cervejas...</button>
+            <button id="botaoOrdenar"> Ordenar cervejas </button>
+            <button id="botaoDesordenar"> Desordenar cervejas </button>
+            <br>
+            <table id="amor" class="amor"></table> <br>
+            <table id="ordenada" class="ordem"></table>
+        </div>            
+   </body>   
+
+   
+   <script>
+        let cervejas = ["Guiness", "Desperados", "Becks"]
+
+        function transformar(item){
+            return `<tr><td>${item}</td></tr>`
+        }
+
+        function carregarDiv(){
+            let div = document.getElementById("amor")
+            //let cervejasHtml = [`<h1>${cervejas[0]}</h1>`,`<h1>${cervejas[1]}</h1>`, `<h1>${cervejas[2]}</h1>`]
+            let cervejasHtml = cervejas.map(transformar)
+            div.innerHTML = `${cervejasHtml.join("\n")}`
+        }
+        function ordenada(){
+            let ordena = document.getElementById("ordenada")
+            let ordenacao = cervejas.sort();
+            ordena.innerHTML = `${ordenacao.join("\n")}`
+        }
+        function desordenada(){
+            let desordena = document.getElementById("ordenada")
+            let desordenacao = cervejas.sort(() => Math.random() - 0.5);
+            desordena.innerHTML = `${desordenacao.join("\n")}`
+        }
+
+        let botao = document.getElementById("botaoCarregar")
+        botao.addEventListener("click", carregarDiv)      
+        let rdena = document.getElementById("botaoOrdenar")
+        rdena.addEventListener("click", ordenada)
+        let desrdena = document.getElementById("botaoDesordenar")
+        desrdena.addEventListener("click", desordenada)            
+   </script>
+</html>
