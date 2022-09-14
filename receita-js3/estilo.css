@@ -1,0 +1,28 @@
+div.meu{
+    color:rgb(74, 253, 193);
+    background-image: url("background.jpg");
+    font-family:Verdana, Geneva, Tahoma, sans-serif;	
+}
+table.amor {
+    color:rgb(74, 253, 193);
+    background-image: url("background.jpg");
+    font-family:Verdana, Geneva, Tahoma, sans-serif;	
+}
+table.ordem{
+    color:coral;
+    background-image: url("background.jpg");
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+a{
+    background: #2a13d4;
+    border-radius: 6px;
+    cursor: pointer;
+    color: rgb(248, 54, 106);
+    border: none;
+    font-size: 20px;
+}
+body{
+    background-image: url("background.jpg");
+    text-align: center;
+    padding: 200px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>   
+   <head>
+      <meta charset="UTF-8">
+      <link href='estilo.css' rel='stylesheet'>    
+   </head>
+
+   
+
+   <body>
+      <div><a id="botaoCarregar"> Carregando cervejas... </a></div>
+      <div id="meu amor" class="meu"></div>
+      <div id="amore mio">
+        <a id="botaoDuplicado"> Carregando livros... </a>
+        <a id="botaoOrdenar"> Ordenar livros </a>
+        <a id="botaoDesordenar"> Desordenar livros </a>
+        <table id="amor" class="amor"></table> <br>
+        <table id="ordenada" class="ordem"></table>
+    </div>         
+   </body>   
+
+   
+
+   <script>
+        let cervejas = ["Guiness", "Desperados", "Becks"]
+        let cerveuja = ["Skol", "Brahma","Bohemia"]
+        let livros = ["Dom Casmurro", "O Cortiço", "Até que a morte nos ampare", "Throne of glass", "Red Queen"]
+        
+        item => `<h1>${item}</h1>`
+        
+        const cerveja = (cer) => {
+            return `<h1>${cer}</h1>`
+        }
+
+        //function carregarDiv(){
+        const carregarDiv = (cervs) => {
+            const div = document.getElementById("meu amor")
+            //const cervejasHtml = cervejas.map(item => `<h1>${item}</h1>`) 
+            //div.innerHTML = `${cervejasHtml.join("\n")}`
+            const cerv = cerveuja.map(cerveja)
+            div.innerHTML = `${cerv.join("\n")}`
+        }
+        let botao = document.getElementById("botaoCarregar")
+        botao.addEventListener("click", carregarDiv)
+        
+        
+        const transformer = (book) => {
+            return `<tr><td>${book}</td></tr>`
+        }
+
+        const loadDiv = () => {
+            const div = document.getElementById("amor")
+            const livro = livros.map(transformer)
+            div.innerHTML = `${livro.join("\n")}`
+        }
+        const ordenada = () =>{
+            const ordena = document.getElementById("ordenada")
+            const ordenacao = livros.sort();
+            ordena.innerHTML = `${ordenacao.join("\n")}`
+        }
+        const desordenada = () => {
+            const desordena = document.getElementById("ordenada")
+            const desordenacao = livros.sort(() => Math.random() - 0.5);
+            desordena.innerHTML = `${desordenacao.join("\n")}`
+        }
+
+        let duplicado = document.getElementById("botaoDuplicado")
+        duplicado.addEventListener("click", loadDiv)      
+        let rdena = document.getElementById("botaoOrdenar")
+        rdena.addEventListener("click", ordenada)
+        let desrdena = document.getElementById("botaoDesordenar")
+        desrdena.addEventListener("click", desordenada) 
+   </script>
+
+</html>
