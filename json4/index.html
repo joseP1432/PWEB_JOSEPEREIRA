@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>   
+
+   <head>
+      <meta charset="UTF-8"> 
+      <link href='estilo.css' rel='stylesheet'>       
+   </head>
+
+
+
+   <body>
+      <div><button id="botaoCarregar">Carregando cervejas...</button></div>
+      <table id="cervejasDiv" class="amor">
+      </table>            
+   </body>   
+
+   
+
+   <script>
+      let cervejas = [
+         {name: "Guiness", alcohol: "10%", style: "Imperial Stout", ibu: "15"}, 
+         {name:"Desperados", alcohol: "6%", style: "Cream Ale", ibu: "35"},
+         {name:"Becks", alcohol: "5%", style: "English IPA", ibu: "55"},
+      ]
+      let object = [
+         "name", "alcohol", "style", "ibu"
+      ]
+   
+      //cs é um array de cervejas
+      const carregarDiv = (cs, x="cervejasDiv", nome="Nome", alcool="Álcool", estilo="Estilo", amargor="Amargor", obi=object) => {
+         const div = document.getElementById(x)
+         const itensHtml = cs.map( item => `<tr>`+ obi.map(obj=> `<td>${item[obj]}</td>`)+`</tr>` ) 
+         div.innerHTML = `<tr> <th> ${nome} </th> <th> ${alcool} </th> <th> ${estilo} </th> <th> ${amargor} </th> </tr> ${itensHtml.join("\n")}`
+      }
+
+      let botao = document.getElementById("botaoCarregar")
+      botao.addEventListener("click", () => carregarDiv(cervejas))                 
+   </script>
+</html>

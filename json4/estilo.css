@@ -1,0 +1,15 @@
+table.amor{
+    color:blueviolet;
+    background-color:antiquewhite;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+}
+button{
+    background: blueviolet;
+    border-radius: 4px;
+    color: antiquewhite;
+    border: none;
+    font-size: 20px;
+}
