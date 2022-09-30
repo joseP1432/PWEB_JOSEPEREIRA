@@ -1,0 +1,28 @@
+table th {
+  background-color: rgb(236, 35, 135);
+}
+a:visited {
+  color: rgb(125, 22, 221);
+}
+a:hover {
+  color: rgb(33, 226, 226);
+}
+a:active {
+  color: aqua;
+}
+table {
+  text-align: center;
+  width: 60%;
+  height: 40%;
+}
+table td:hover {
+  color: rgb(236, 35, 135);
+}
+body {
+  padding: 10px;
+  padding-left: 25%;
+  background-image: url("background.jpg");
+}
+td {
+  background-color: azure;
+}
