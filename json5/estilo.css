@@ -1,0 +1,24 @@
+body{
+    background-color: springgreen;
+}
+div.amor{
+    color:blueviolet;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    width: 50%;
+    height: 50%;
+    padding: 15%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 150%;
+}
+button{
+    background: blueviolet;
+    border-radius: 4px;
+    color: antiquewhite;
+    border: none;
+    font-size: 20px;
+}
+table{
+    color:springgreen;
+    background-color: azure;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
