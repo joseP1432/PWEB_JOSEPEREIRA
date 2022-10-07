@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <title>ReactZero</title>    
+      <link href='estilo.css' rel='stylesheet'>   
+   </head>
+
+   <body>
+      <div id="app">
+      </div> </br>
+      
+      <div id="table">
+      </br>
+      </div>
+      
+      <script src="libs/react.js"></script>
+      <script src="libs/react-dom.js"></script>
+      <script src="libs/babel.js"></script>
+      
+      <script type="text/babel">
+
+         const TabelaBebidas = () =>{
+            return <div id="app">
+               <table id="tabela" class="nova" border="1">
+                  <thead>
+                     <tr><th>Nome</th><th>Marca</th></tr>
+                  </thead>
+                  <tbody>
+                     <tr><td>Havana</td><td>Engenho Anísio Santiago</td></tr>
+                  </tbody>
+               </table>
+            </div>
+         }
+      
+         const Cabecalho = () =>{
+            return <h1> Minha tabela de bebidas </h1>
+         }
+      
+         let cervejas = [
+            {name: "Guiness", alcohol: "10%", style: "Imperial Stout"}, 
+            {name:"Desperados", alcohol: "6%", style: "Cream Ale"},
+            {name:"Becks", alcohol: "5%", style: "English IPA"},
+         ]
+
+         const GeraCervejas = () =>{
+            return <div id="tble">
+               <table id="tabelaCervejas" class="amor" border="1">
+               </table>
+            </div>
+         }
+
+         const Botao = () =>{
+            return <button id='gerarCerveja'> Gerando cervejas... </button>
+         }
+
+         //cs é um array de cervejas
+         const CarregarCerveja = cs => {
+            const div = document.getElementById("tabelaCervejas")
+            const itensHtml = cs.map(item => `<tr> <td>${item['name']}</td> <td>${item['alcohol']}</td> <td>${item['style']}</td></tr>`)
+            div.innerHTML = `
+                  <tr>
+                     <th>Nome</th>
+                     <th>Álcool</th>
+                     <th>Estilo</th>
+                  </tr>
+                  ${itensHtml.join("\n")}`
+         }
+
+         ReactDOM.render(
+            <div> 
+               <Cabecalho/> <TabelaBebidas/>
+            </div>,
+            document.getElementById('app')
+         );
+
+         ReactDOM.render(
+            <div> 
+               <Botao/> <GeraCervejas/>
+            </div>,
+            document.getElementById('table')
+         );
+
+         let botao = document.getElementById("gerarCerveja")
+         botao.addEventListener("click", () => CarregarCerveja(cervejas))
+      </script>
+   </body>
+
+</html>
