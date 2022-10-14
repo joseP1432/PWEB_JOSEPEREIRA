@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <title>ReceitaReact - 3</title>     
+      <meta charset="utf-8">   
+   </head>
+
+   <body>
+      <div id="app">
+      </div>
+
+      <script src="libs/react.js"> </script> 
+      <script src="libs/react-dom.js"> </script> 
+      <script src="libs/babel.js"> </script> 
+
+      <script type="text/babel"> 
+         const TabelaBebidas = ({titulo, cabecalhos, conteudos, cont}) => {
+        // const TabelaBebidas = ({titulo, subtitulo}) => {
+            return (
+               <div>
+                  <h1>{titulo}</h1>
+                  <table id="tabela" border="1">
+                     <thead>
+                        <tr> {cabecalhos.map((cabecalho, cabe) => <th key={cabe}>{cabecalho}</th>)}  </tr>
+                     </thead>
+                     <tbody>
+                        {cont.map((conteudo, cont) => <tr key={cont}> {conteudos.map((prop, cont) => <td key={cont}> {conteudo[prop]} </td>)} </tr>)}
+                     </tbody>
+                  </table>
+               </div>
+            )  
+         }
+
+         const valoresCabecalhos = ["Nome", "Marca", "Valor", "Validade"]
+         const propConteudo = ["nome", "marca", "valor", "validade"]
+         const valoresConteudos = [{nome:"Brahma Duplo Malte", marca:"Brahma", valor:"32,00", validade:"15/11/2015"},
+         {nome:"51", marca:"Companhia Müller de Bebidas", valor:"2,00", validade:"15/11/2050"},]
+         ReactDOM.render(
+            <TabelaBebidas titulo="minha tabela de cana" cabecalhos={ valoresCabecalhos } conteudos={ propConteudo }
+             cont={ valoresConteudos }/>
+            ,
+            document.getElementById("app"))
+      </script>
+   </body>
+</html>
