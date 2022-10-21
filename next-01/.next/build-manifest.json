@@ -25,10 +25,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/novo": [
+    "/novaPagina": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/novo.js"
+      "static/chunks/pages/novaPagina.js"
     ]
   },
   "ampFirstPages": []
