@@ -25,10 +25,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/novo": [
+    "/movies3": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/novo.js"
+      "static/chunks/pages/movies3.js"
+    ],
+    "/movies4": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/movies4.js"
+    ],
+    "/searchmovies/[key]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/searchmovies/[key].js"
     ]
   },
   "ampFirstPages": []
