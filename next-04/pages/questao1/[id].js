@@ -3,8 +3,8 @@ import { useRouter } from 'next/router'
 
 export default function Movies2(){
     const router = useRouter();
-    const { imdbID } = router.query;
-    const {data, error} = useSWR(`http://www.omdbapi.com/?apikey=fe65a93e&i=` + imdbID, fetcher);   
+    const { id } = router.query;
+    const {data, error} = useSWR(`http://www.omdbapi.com/?apikey=fe65a93e&i=` + id, fetcher);   
     if (error) return <div>falha na requisição...</div>
     if (!data) return <div>carregando...</div>
     return (

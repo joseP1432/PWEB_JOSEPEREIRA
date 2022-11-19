@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
 
 export async function getServerSideProps(context){
-    const { imdbID } = context.query;
-    const res = await fetch(`http://www.omdbapi.com/?apikey=fe65a93e&i=` + imdbID)
+    const { id } = context.query;
+    const res = await fetch(`http://www.omdbapi.com/?apikey=fe65a93e&i=` + id)
     const data = await res.json()
     return {
         props: {
