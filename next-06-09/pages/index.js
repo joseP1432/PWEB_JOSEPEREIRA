@@ -51,7 +51,7 @@ export default function Movies3() {
             setValidate({ message: 'Título vazio!' });
         } else {
             if (state.url === '') {
-                setState({ url: 'http://www.omdbapi.com', titleSearchString: s, orderBy: state.orderBy });
+                setState({ url: 'https://www.omdbapi.com', titleSearchString: s, orderBy: state.orderBy });
             } else {
                 setState({ url: '', titleSearchString: state.titleSearchString, orderBy: state.orderBy });
             }

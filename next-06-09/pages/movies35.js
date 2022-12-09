@@ -28,7 +28,7 @@ export default function Movies35() {
             setValidate({ message: 'Título vazio!'});
         } else {
             if (state.url === '') {
-                setState({ url: 'http://www.omdbapi.com', titleSearchString: s, yearSearchString: t, typeSearchString: v })
+                setState({ url: 'https://www.omdbapi.com', titleSearchString: s, yearSearchString: t, typeSearchString: v })
             }else{
                 setState({ url: '', titleSearchString: state.titleSearchString, yearSearchString: state.yearSearchString, typeSearchString: state.yearSearchString })
             }
