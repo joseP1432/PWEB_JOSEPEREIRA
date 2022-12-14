@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { Layout, Menu } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 
-export default function Movies3({data}) {
+export default function Movies3({ data }) {
     return (
         <div>
             <Head>
@@ -65,14 +65,13 @@ export default function Movies3({data}) {
 }
 
 export function TheMovie({ data }) {
-    console.log(`Pré-renderizando ${data.volumeInfo.title}`)
     if (!data) return (<div>Carregando...</div>)
     if (!data.id) return (<div> Livro indisponível </div>)
     if (!data.volumeInfo.imageLinks)
         return (
             <div>
-                <div> <h1> {data.volumeInfo.title} </h1> <br /> 
-                <h3>{data.volumeInfo.authors}</h3> </div>
+                <div> <h1> {data.volumeInfo.title} </h1> <br />
+                    <h3>{data.volumeInfo.authors}</h3> </div>
                 <div>
                     <p>{data.volumeInfo.description}</p>
                 </div>
@@ -83,12 +82,13 @@ export function TheMovie({ data }) {
         return (
             <div>
                 <div> <h1> {data.volumeInfo.title} </h1> <br /> <h3>{data.volumeInfo.authors}</h3> </div>
-                <div style= {{textAlign: 'center'}}>
+                <div style={{ textAlign: 'center' }}>
                     <img src={data.volumeInfo.imageLinks.extraLarge} width="300" height="400" textAlign='center' /> <br />
-                    <br/>{data.volumeInfo.description}
+                    <br />{data.volumeInfo.description}
                 </div>
             </div>
         )
+    console.log(`Pré-renderizando ${data.volumeInfo.title}`)
 }
 
 export async function getStaticPaths() {
