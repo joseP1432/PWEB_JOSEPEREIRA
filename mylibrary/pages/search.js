@@ -133,7 +133,7 @@ export function TheBooks({ data, show }) {
     if (!show) return (<div></div>)
     if (!data) return (<div></div>)
     if (data.error) return (<div>Falha na pesquisa</div>)
-    if (data.Error) return (<div>Filme não encontrado na pesquisa</div>)
+    if (data.totalItems === 0) return (<div>Filme não encontrado na pesquisa</div>)
     if (data.items === '') return (<div> <Button type="primary" size="small" loading> Carregando...</Button></div>)
     return (
         <div className="table-responsive" style={{ marginLeft: '1rem' }}>
